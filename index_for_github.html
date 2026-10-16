@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Little Surprise 💜</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;padding:16px;display:grid;place-items:center;background:repeating-linear-gradient(90deg,#fff4a6 0 26px,#f1dcff 26px 52px);font-family:Georgia,serif;color:#49345f;overflow-x:hidden}.floaties{position:fixed;inset:0;pointer-events:none;overflow:hidden}.float{position:absolute;bottom:-30px;animation:rise linear infinite;opacity:.8}.card{position:relative;width:min(100%,600px);background:#fffdf4;border:4px solid #b99ae8;border-radius:24px;padding:22px 16px;text-align:center;box-shadow:0 10px 0 #d9c2f1,0 20px 40px #7650aa22;animation:appear .7s ease both}.cat{font:3.2rem Arial;animation:bob 2s infinite}.heading{font-size:clamp(1.6rem,5vw,2.4rem);color:#7650aa;margin:10px 0}.copy{white-space:pre-wrap;line-height:1.75;font-size:1rem}.btn{font:bold 1rem Arial;border:2px solid #b99ae8;border-radius:999px;background:#f0e4ff;color:#684a99;padding:12px 18px;margin:5px;cursor:pointer;touch-action:manipulation}.primary{background:#d7c1f6}.pin{font:1.1rem Arial;letter-spacing:.2em;text-align:center;width:100%;max-width:245px;padding:12px;border:2px solid #b99ae8;border-radius:12px}.keypad{display:grid;grid-template-columns:repeat(3,52px);gap:8px;justify-content:center;margin:12px}.key{padding:12px 0;border:0;border-radius:12px;background:#eee0ff;color:#694b99;font-weight:bold;font-size:1rem;cursor:pointer;touch-action:manipulation}.hidden{display:none!important}.giftrow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:18px 0}.gift{flex:1;min-width:95px;max-width:170px;padding:14px 7px;border:2px solid #d6b9f0;border-radius:16px;background:#fff8fc;cursor:pointer;touch-action:manipulation}.gift span{font:2.4rem Arial;display:block;animation:bob 2s infinite}.banner{display:inline-block;background:#fff0a1;border:2px dashed #c28bcb;padding:9px 13px;letter-spacing:.08em;font:bold .9rem Arial;transform:rotate(-2deg);margin:10px;animation:sway 3s infinite}.signature{color:#7650aa;font-style:italic;font-size:1.15rem;margin-top:18px}.error{color:#a23b66;min-height:1.2em}hr{border:0;border-top:2px dashed #d8c4ef;margin:18px 0}.confetti{position:fixed;top:-15px;width:8px;height:13px;z-index:10;animation:fall 3s linear forwards;pointer-events:none}@keyframes rise{to{transform:translateY(-115vh) rotate(360deg)}}@keyframes bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-7px) rotate(3deg)}}@keyframes appear{from{opacity:0;transform:translateY(15px) scale(.98)}to{opacity:1;transform:none}}@keyframes sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}@keyframes fall{to{transform:translateY(110vh) rotate(650deg);opacity:.2}}@media(max-width:420px){.card{padding:17px 9px}.copy{font-size:.96rem}.gift{min-width:85px}}
+</style>
+</head>
+<body>
+<div class="floaties" id="floaties"></div>
+<main class="card">
+<div class="cat">🐱💜</div>
+<section id="lock">
+<h1 class="heading">Unlock the surprise</h1><p class="copy">A tiny secret for you ✨<br>Enter your special PIN</p>
+<input class="pin" id="pin" type="password" inputmode="numeric" maxlength="12" aria-label="Secret PIN">
+<div class="keypad">
+<button class="key" data-key="1">1</button><button class="key" data-key="2">2</button><button class="key" data-key="3">3</button>
+<button class="key" data-key="4">4</button><button class="key" data-key="5">5</button><button class="key" data-key="6">6</button>
+<button class="key" data-key="7">7</button><button class="key" data-key="8">8</button><button class="key" data-key="9">9</button>
+<button class="key" data-key="back">⌫</button><button class="key" data-key="0">0</button><button class="key" data-key="enter">✓</button>
+</div><p class="error" id="error"></p><button class="btn primary" id="unlock" type="button">Unlock 💜</button><p style="font: .8rem Arial">Demo PIN: 1901</p>
+</section>
+<section id="intro" class="hidden"><div class="banner">A LITTLE SURPRISE</div><h1 class="heading">I have a little surprise for you.</h1><p class="copy">I made a little something just for you. Wanna see it?</p><button class="btn primary" id="yes" type="button">YES 💌</button><button class="btn" id="no" type="button">NO 🙈</button><p id="noMsg"></p></section>
+<section id="gifts" class="hidden"><h1 class="heading">Choose a little gift 🎁</h1><p class="copy">Pick a surprise, made with love.</p><div class="giftrow"><button class="gift" data-gift="letter" type="button"><span>💌</span>Open my letter</button><button class="gift" data-gift="memories" type="button"><span>📸</span>Our memories</button><button class="gift" data-gift="wish" type="button"><span>🎁</span>A little wish</button></div></section>
+<section id="letter" class="hidden"><div class="banner">MADE WITH LOVE</div><h1 class="heading">A letter for you ♡</h1><p class="copy">To my favourite person,
+
+I wanted to make something small but meaningful for you, because you deserve reminders of how special you are.
+
+Thank you for being a beautiful part of my life — for the little moments, the laughter, the memories, and even the ordinary days that feel better because you are in them. I hope this surprise makes you smile and reminds you that someone is always wishing good things for you.
+
+May your days be filled with peace, happiness, answered duas, and all the little things your heart has been hoping for. No matter where life takes us, I will always treasure the memories we make.
+
+This little corner of the internet is just for you, with lots of love.
+
+Always yours,</p><div class="signature">With love, your person ♡</div><button class="btn" id="again" type="button">Read it again ↺</button><button class="btn" data-back type="button">Back to gifts</button></section>
+<section id="memories" class="hidden"><h1 class="heading">Our little memories 📸</h1><p class="copy">Your favourite photos can be added to this page when you customize the HTML.</p><button class="btn" data-back type="button">Back to gifts</button><button class="btn primary" data-letter type="button">Read my letter 💌</button></section>
+<section id="wish" class="hidden"><div class="cat">🎉🎂🎊</div><h1 class="heading">A little wish for you</h1><p class="copy">May your days be filled with peace, happiness, answered duas, and beautiful little moments. You deserve to feel loved and appreciated. ✨</p><button class="btn primary" data-letter type="button">Open your letter 💌</button><button class="btn" data-back type="button">Back to gifts</button></section>
+</main>
+<script>
+(function(){
+const PIN='1901';
+const $=id=>document.getElementById(id);
+const screens=['lock','intro','gifts','letter','memories','wish'];
+function show(id){screens.forEach(s=>$(s).classList.toggle('hidden',s!==id));if(id==='letter'||id==='wish')confetti();}
+function confetti(){for(let i=0;i<32;i++){const e=document.createElement('i');e.className='confetti';e.style.left=(Math.random()*100)+'vw';e.style.background=['#b99ae8','#ffb7d5','#ffe77a','#a6e4d0'][i%4];e.style.animationDelay=(Math.random()*.6)+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),3800);}}
+for(let i=0;i<18;i++){const e=document.createElement('span');e.className='float';e.textContent=['✦','♡','✧','💜'][i%4];e.style.left=(Math.random()*100)+'%';e.style.animationDuration=(8+Math.random()*12)+'s';e.style.animationDelay=(-Math.random()*15)+'s';e.style.fontSize=(12+Math.random()*18)+'px';$('floaties').appendChild(e);}
+document.querySelectorAll('[data-key]').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.key;if(k==='back')$('pin').value=$('pin').value.slice(0,-1);else if(k==='enter')$('unlock').click();else if($('pin').value.length<12)$('pin').value+=k;}));
+$('unlock').addEventListener('click',()=>{if($('pin').value===PIN){$('error').textContent='';show('intro');confetti();}else $('error').textContent='Try PIN 1901 💜';});
+$('pin').addEventListener('keydown',e=>{if(e.key==='Enter')$('unlock').click();});
+$('yes').addEventListener('click',()=>show('gifts'));
+$('no').addEventListener('click',()=>{$('noMsg').textContent='Hehe, try the YES button 😼';});
+document.querySelectorAll('[data-gift]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.gift)));
+document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>show('gifts')));
+document.querySelectorAll('[data-letter]').forEach(b=>b.addEventListener('click',()=>show('letter')));
+$('again').addEventListener('click',()=>show('letter'));
+})();
+</script>
+</body></html>
